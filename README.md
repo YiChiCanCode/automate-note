@@ -20,6 +20,9 @@ Automate-Note is a project designed to simplify the process of taking, organizin
 - **History Saving**: You can save all your history notes and be able to access them later in the future
 - **Note Organization**: Categorize your notes by tags and dates
 - **Add a gif to READme**
+- Thoughts：
+  - Need to create backend code using Flask that interacts with the sqlite database. The Flask API should allow things like query the database (does the account exist), fetch stuff from database, and also add stuff from database, meanwhile should also write things that allow me to test with the database (print, deletion).
+  - After the API is created, create new pages for html that will interact with these flask API.
 
 ## Future Goals
 
