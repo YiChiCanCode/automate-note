@@ -19,7 +19,7 @@ Automate-Note is a project designed to simplify the process of taking, organizin
 
 - **History Saving**: You can save all your history notes and be able to access them later in the future
 - **Note Organization**: Categorize your notes by tags and dates
-
+- **Add a gif to READme**
 
 ## Future Goals
 
