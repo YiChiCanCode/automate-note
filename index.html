@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Taking Automation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Note Taking Automation</h1>
+
+    <label for="class-content">课堂内容</label>
+    <textarea type="text" id="class-content" placeholder="Enter Class Content"></textarea>
+
+    <label for="feedback">课堂反馈</label>
+    <textarea type="text" id="feedback" placeholder="Enter Feedback"></textarea>
+
+    <label for="homework">课后作业</label>
+    <textarea type="text" id="homework" placeholder="Enter Homework"></textarea>
+
+    <label for="next-class">下节课内容</label>
+    <textarea type="text" id="next-class" placeholder="Enter Next Class"></textarea>
+
+    <br>
+
+    <button onclick="generateNote()">Copy Note</button>
+
+    <script>
+        function generateNote() {
+            const currentDate = new Date();
+            const datetime = currentDate.toLocaleString();
+            const classContent = document.getElementById("class-content").value;
+            const feedback = document.getElementById("feedback").value;
+            const homework = document.getElementById("homework").value;
+            const nextClass = document.getElementById("next-class").value;
+
+            const structuredNote = 
+`日期:
+[${datetime}]
+
+课堂内容:
+${classContent}
+
+课堂反馈:
+${feedback}
+
+课后作业: 
+${homework}
+
+下节课内容: 
+${nextClass}`;
+
+            copyToClipboard(structuredNote);
+        }
+
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert("Note copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
